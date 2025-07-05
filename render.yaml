@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: django-iris-app
+    runtime: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
+    startCommand: "gunicorn myaiapp.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: myaiapp.settings
+      - key: PYTHON_VERSION
+        value: 3.10

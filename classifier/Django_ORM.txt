@@ -1,0 +1,12 @@
+Now that your predictions are being saved in the database, let’s learn how to retrieve, 
+filter, and manage that data using Django ORM (Object Relational Mapper).
+
+Django ORM Basics Summary
+
+Operation	Django ORM
+Get all	    Prediction.objects.all()
+Filter	    Prediction.objects.filter(predicted_class=1)
+Order	    .order_by('-timestamp')
+Latest	    Prediction.objects.latest('timestamp')
+Count	    .count()
+Delete	    .delete()
